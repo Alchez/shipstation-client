@@ -2,6 +2,13 @@
 
 
 
+## v0.1.4 (2024-06-04)
+
+### Fix
+
+* fix: setup semantic release config ([`961fafb`](https://github.com/Alchez/shipstation-client/commit/961fafb3355a47a9372e36982de18c73c35fdf35))
+
+
 ## v0.1.3 (2024-06-04)
 
 ### Fix
