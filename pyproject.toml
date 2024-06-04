@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "shipstation-client-test"
-version = "0.1.2"
+version = "0.1.3"
 description = "Python bindings for the ShipStation API"
 license = "MIT"
 authors = ["AgriTheory <hello@agritheory.com>"]
@@ -71,3 +71,9 @@ line_length = 80
 multi_line_output = 3
 sections = "TYPING,STDLIB,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
 use_parentheses = true
+
+[tool.semantic_release]
+version_toml = ["pyproject.toml:tool.poetry.version"]
+
+[tool.semantic_release.branches.version]
+match = "(main|master)"
