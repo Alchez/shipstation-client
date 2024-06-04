@@ -33,7 +33,7 @@ jobs:
 
     environment:
       name: pypi
-      url: https://pypi.org/p/shipstation-client
+      url: https://pypi.org/p/shipstation-client-test
 
     permissions:
       id-token: write
@@ -50,9 +50,6 @@ jobs:
         with:
           name: ${{ steps.build.outputs.artifact-name }}
           path: dist
-
-      - name: Display structure of downloaded files
-        run: ls -R
 
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
