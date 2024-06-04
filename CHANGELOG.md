@@ -2,6 +2,13 @@
 
 
 
+## v0.1.5 (2024-06-04)
+
+### Fix
+
+* fix: update package target ([`39aa830`](https://github.com/Alchez/shipstation-client/commit/39aa83041a25537b473d718eaa36373a09eaeac6))
+
+
 ## v0.1.4 (2024-06-04)
 
 ### Fix
