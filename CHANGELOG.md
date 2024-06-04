@@ -2,6 +2,13 @@
 
 
 
+## v0.1.3 (2024-06-04)
+
+### Fix
+
+* fix: pyproject project name ([`f608d3f`](https://github.com/Alchez/shipstation-client/commit/f608d3faaeb80744e129900a86d6c06139380714))
+
+
 ## v0.1.2 (2024-06-04)
 
 ### Fix
