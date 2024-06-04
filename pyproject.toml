@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "shipstation-client-test"
+name = "shipstation-client"
 version = "0.1.4"
 description = "Python bindings for the ShipStation API"
 license = "MIT"

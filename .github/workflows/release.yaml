@@ -9,38 +9,28 @@ jobs:
   release:
     name: Semantic Release
     runs-on: ubuntu-latest
+
+    environment:
+      name: pypi
+      url: https://pypi.org/p/shipstation-client
+
     concurrency: release
     permissions:
       id-token: write
       contents: write
 
     steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-    - name: Python Semantic Release
-      uses: python-semantic-release/python-semantic-release@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        git_committer_name: AgriTheory
-        git_committer_email: support@agritheory.dev
-
-  pypi-publish:
-    needs: release
-    name: Upload release to PyPI
-    runs-on: ubuntu-latest
-
-    environment:
-      name: pypi
-      url: https://pypi.org/p/shipstation-client-test
-
-    permissions:
-      id-token: write
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Python Semantic Release
+        id: release
+        uses: python-semantic-release/python-semantic-release@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          git_committer_name: AgriTheory
+          git_committer_email: support@agritheory.dev
 
       - name: Build and Inspect Package
         uses: hynek/build-and-inspect-python-package@v2
@@ -51,7 +41,15 @@ jobs:
           name: ${{ steps.build.outputs.artifact-name }}
           path: dist
 
-      - name: Publish package distributions to PyPI
+      - name: Publish package to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
+        if: ${{ steps.release.outputs.released }} == 'true'
         with:
           repository-url: https://test.pypi.org/legacy/
+
+      - name: Publish package to GitHub Release
+        uses: python-semantic-release/upload-to-gh-release@v9.8.0
+        if: ${{ steps.release.outputs.released }} == 'true'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ steps.release.outputs.tag }}
