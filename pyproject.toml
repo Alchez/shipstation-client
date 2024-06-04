@@ -1,13 +1,13 @@
 [tool.poetry]
 name = "shipstation-client"
-version = "0.1.0"
-description = 'Python bindings for the ShipStation API'
+version = "0.2.0"
+description = "Python bindings for the ShipStation API"
 license = "MIT"
 authors = ["AgriTheory <hello@agritheory.com>"]
 readme = "README.md"
 homepage = "https://github.com/agritheory/shipstation-client"
 repository = "https://github.com/agritheory/shipstation-client"
-keywords = ['shipstation', 'client', 'api', 'python', 'orders', 'shipments']
+keywords = ["shipstation", "client", "api", "python", "orders", "shipments"]
 packages = [{ include = "shipstation" }]
 classifiers = [
   "Development Status :: 4 - Beta",
