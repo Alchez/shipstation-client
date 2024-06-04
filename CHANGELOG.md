@@ -2,6 +2,13 @@
 
 
 
+## v0.1.6 (2024-06-04)
+
+### Fix
+
+* fix: remove darglint ([`028b93b`](https://github.com/Alchez/shipstation-client/commit/028b93b8235eb2b7231aad995044d5c407b0c11b))
+
+
 ## v0.1.5 (2024-06-04)
 
 ### Fix

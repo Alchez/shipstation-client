@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "shipstation-client"
-version = "0.1.5"
+version = "0.1.6"
 description = "Python bindings for the ShipStation API"
 license = "MIT"
 authors = ["AgriTheory <hello@agritheory.com>"]
