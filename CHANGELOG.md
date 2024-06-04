@@ -2,6 +2,13 @@
 
 
 
+## v0.1.1 (2024-06-04)
+
+### Fix
+
+* fix: release yml ([`e1c6994`](https://github.com/Alchez/shipstation-client/commit/e1c69943e9f2f6ef9c1668360eb2765d734164aa))
+
+
 ## v0.1.0 (2024-06-04)
 
 ### Build
