@@ -11,7 +11,6 @@ ifeq ($(STRICT), 1)
 	BANDIT_COMMAND_FLAG =
 	SECRETS_COMMAND_FLAG =
 	BLACK_COMMAND_FLAG =
-	DARGLINT_COMMAND_FLAG =
 	ISORT_COMMAND_FLAG =
 	MYPY_COMMAND_FLAG =
 else
@@ -21,7 +20,6 @@ else
 	BANDIT_COMMAND_FLAG = -
 	SECRETS_COMMAND_FLAG = -
 	BLACK_COMMAND_FLAG = -
-	DARGLINT_COMMAND_FLAG = -
 	ISORT_COMMAND_FLAG = -
 	MYPY_COMMAND_FLAG = -
 endif
@@ -63,12 +61,6 @@ ifeq ($(BLACK_STRICT), 1)
 	BLACK_COMMAND_FLAG =
 else ifeq ($(BLACK_STRICT), 0)
 	BLACK_COMMAND_FLAG = -
-endif
-
-ifeq ($(DARGLINT_STRICT), 1)
-	DARGLINT_COMMAND_FLAG =
-else ifeq (DARGLINT_STRICT), 0)
-	DARGLINT_COMMAND_FLAG = -
 endif
 
 ifeq ($(ISORT_STRICT), 1)
@@ -116,9 +108,6 @@ check-safety:
 check-style:
 	$(BLACK_COMMAND_FLAG)@echo -e "Checking black..."
 	$(BLACK_COMMAND_FLAG)poetry run black --config pyproject.toml --diff --check ./
-
-	$(DARGLINT_COMMAND_FLAG)@echo -e "\nChecking darglint..."
-	$(DARGLINT_COMMAND_FLAG)poetry run darglint --verbosity 2 **/*.py
 
 	$(ISORT_COMMAND_FLAG)@echo -e "\nChecking isort..."
 	$(ISORT_COMMAND_FLAG)poetry run isort . --settings-path pyproject.toml --check-only

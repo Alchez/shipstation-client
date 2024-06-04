@@ -27,7 +27,6 @@ For your development we've prepared:
 - Ready-to-use [`pre-commit`](https://pre-commit.com/) hooks with formatters above.
 - Type checks with the configured [`mypy`](https://mypy.readthedocs.io).
 - Testing with [`pytest`](https://docs.pytest.org/en/latest/).
-- Docstring checks with [`darglint`](https://github.com/terrencepreilly/darglint).
 - Security checks with [`safety`](https://github.com/pyupio/safety) and [`bandit`](https://github.com/PyCQA/bandit).
 - Well-made [`.editorconfig`](https://github.com/agritheory/shipstation-client/blob/master/.editorconfig) and [`.gitignore`](https://github.com/agritheory/shipstation-client/blob/master/.gitignore). You don't have to worry about those things.
 
@@ -161,7 +160,7 @@ make check-safety PIP_STRICT=1 SAFETY_STRICT=1
 <summary>4. Check the codestyle</summary>
 <p>
 
-The command is similar to `check-safety` but to check the code style, obviously. It uses `Black`, `Darglint`, `Isort`, and `Mypy` inside.
+The command is similar to `check-safety` but to check the code style, obviously. It uses `Black`, `Isort`, and `Mypy` inside.
 
 ```bash
 make check-style
@@ -173,7 +172,7 @@ It may also contain the `STRICT` flag.
 make check-style STRICT=1
 ```
 
-> List of flags for `check-style` (can be set to `1` or `0`): `STRICT`, `BLACK_STRICT`, `DARGLINT_STRICT`, `ISORT_STRICT`, `MYPY_STRICT`.
+> List of flags for `check-style` (can be set to `1` or `0`): `STRICT`, `BLACK_STRICT`, `ISORT_STRICT`, `MYPY_STRICT`.
 
 </p>
 </details>
@@ -216,7 +215,7 @@ the same as:
 make test && make check-safety && make check-style
 ```
 
-> List of flags for `lint` (can be set to `1` or `0`): `STRICT`, `POETRY_STRICT`, `PIP_STRICT`, `SAFETY_STRICT`, `BANDIT_STRICT`, `BLACK_STRICT`, `DARGLINT_STRICT`, `ISORT_STRICT`, `MYPY_STRICT`.
+> List of flags for `lint` (can be set to `1` or `0`): `STRICT`, `POETRY_STRICT`, `PIP_STRICT`, `SAFETY_STRICT`, `BANDIT_STRICT`, `BLACK_STRICT`, `ISORT_STRICT`, `MYPY_STRICT`.
 
 </p>
 </details>
